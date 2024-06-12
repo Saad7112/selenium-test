@@ -13,7 +13,7 @@ COPY . .
 
 RUN npm init -y
 
-RUN install express
+RUN npm install express
  
 # Expose the port the app runs on
 EXPOSE 3000
