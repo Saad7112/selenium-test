@@ -17,7 +17,7 @@ pipeline {
                         
                         # Load NVM and install Node.js
                         export NVM_DIR="${WORKSPACE}/.nvm"
-                        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
                         nvm install 20
                         nvm use 20
                     '''
@@ -31,7 +31,7 @@ pipeline {
                     sh '''
                         # Load NVM and use Node.js
                         export NVM_DIR="${WORKSPACE}/.nvm"
-                        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
                         nvm use 20
                         
                         # Navigate to the workspace directory
@@ -65,7 +65,7 @@ pipeline {
                 sh '''
                     # Load NVM and use Node.js
                     export NVM_DIR="${WORKSPACE}/.nvm"
-                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
                     nvm use 20
                     
                     # Navigate to the workspace directory
