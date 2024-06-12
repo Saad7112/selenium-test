@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Make sure Docker is installed and running
-                    sh 'docker compose up'
+                    sh 'docker compose up -d'
                     
                     // Build and run Docker Compose
                     // sh 'docker-compose up -d --build
