@@ -27,27 +27,17 @@ pipeline {
                         export NVM_DIR="${WORKSPACE}/.nvm"
                         [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"
                         nvm use 20
-                        node -v
-                        npm -v
+                        cd /var/lib/jenkins/workspace/Hello_test/sel-test
+                        ls
                         npm init -y
                         npm install express
-
-                        docker --version
-                        docker compose up -d --build
+                        docker compose up 
+                        
                     '''
                 }
             }
         }
     }
 
-    post {
-        always {
-            script {
-                sh '''
-                    docker compose down
-                    node test.js
-                '''
-            }
-        }
-    }
+   
 }
