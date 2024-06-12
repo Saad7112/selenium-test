@@ -12,6 +12,7 @@ pipeline {
                     //sh 'nvm list-remote'    
                     //sh 'nvm install v20.14.0'
                     //sh 'apt install nodejs -y'
+                    sh 'ls /var/lib/jenkins/workspace/Hello_test/sel-test'
                     sh 'node -v'
                     sh 'npm -v'
                     sh 'npm init -y'
