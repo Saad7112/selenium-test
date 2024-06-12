@@ -11,7 +11,7 @@ pipeline {
                     //sh 'source ~/.bashrc'
                     //sh 'nvm list-remote'    
                     //sh 'nvm install v20.14.0'
-                    sh 'apt install nodejs -y'
+                    //sh 'apt install nodejs -y'
                     sh 'node -v'
                     sh 'npm -v'
                     sh 'npm init -y'
