@@ -11,7 +11,7 @@ pipeline {
                     
                     // Build and run Docker Compose
                     // sh 'docker-compose up -d --build
-                     sh 'node test.js'
+                     sh 'node /home/new/saad/Selenium/test.js'
                 }
             }
         }
