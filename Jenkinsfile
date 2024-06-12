@@ -23,15 +23,11 @@ pipeline {
                     
                     // Build and run Docker Compose
                     // sh 'docker-compose up -d --build
+                     sh 'node test.js'
                 }
             }
         }
     }
     
-    post {
-        always {
-            // Clean up Docker Compose containers
-            sh 'node test.js'
-        }
-    }
+
 }
