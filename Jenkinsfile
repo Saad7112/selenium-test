@@ -9,7 +9,7 @@ pipeline {
                     sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh'
                     sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
                     sh 'source ~/.bashrc'
-                    sh 'nvm list-remote    
+                    sh 'nvm list-remote'    
                     sh 'nvm install v20.14.0'
                     sh 'npm init -y'
                     sh 'npm install express'
