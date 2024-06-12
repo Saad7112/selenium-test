@@ -10,8 +10,10 @@ pipeline {
                     //sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
                     //sh 'source ~/.bashrc'
                     sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'    
-                    sh 'export NVM_DIR="$HOME/.nvm"
-                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+                    sh '''
+                    export NVM_DIR="$HOME/.nvm"
+                    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                    '''
                     sh 'nvm install 20'
                     sh 'cd /var/lib/jenkins/workspace/Hello_test/sel-test'
                     sh 'ls'
