@@ -1,28 +1,16 @@
 pipeline {
     agent any
-    stages {
-        stage('Setup Environment') {
-            steps {
-                script {
-                    // Install the latest Node.js and npm
-                    sh '''
-                        curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
-                        sudo apt-get install -y nodejs
-                    '''
-                    
-                    // Verify installation
-                    sh 'node --version'
-                    sh 'npm --version'
-                }
-            }
-        }
-
 
     
     stages {
         stage('Build and Deploy') {
             steps {
                 script {
+                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh'
+                    sh 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
+                    sh 'source ~/.bashrc'
+                    sh 'nvm list-remote    
+                    sh 'nvm install v20.14.0'
                     sh 'npm init -y'
                     sh 'npm install express'
                     // Make sure Docker is installed and running
