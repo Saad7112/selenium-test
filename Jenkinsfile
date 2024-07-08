@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Make sure Docker is installed and running
-                    sh 'docker compose up -d'
+                    bat 'docker compose up -d'
                     // Wait for Selenium Hub to be ready
                     retry(5) {
                         sleep(time: 10, unit: 'SECONDS')
@@ -18,8 +18,7 @@ pipeline {
                     }
                     
                     // Build and run Docker Compose
-                    // sh 'docker-compose up -d --build
-                     sh 'node /home/new/saad/Selenium/test.js'
+                     bat 'node /home/new/saad/Selenium/test.js'
                 }
             }
         }
