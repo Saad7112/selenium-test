@@ -18,7 +18,7 @@ pipeline {
                     }
                     
                     // Build and run Docker Compose
-                     bat 'node /home/new/saad/Selenium/test.js'
+                     bat 'node C:/ProgramData/Jenkins/test.js'
                 }
             }
         }
