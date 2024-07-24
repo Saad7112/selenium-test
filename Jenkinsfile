@@ -6,6 +6,37 @@ pipeline {
 
     
     stages {
+
+            // SonarQube Analysis
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    withSonarQubeEnv('sonar') {
+                        dir('/var/lib/jenkins/workspace/Hello_test') {
+                            // Install Node.js dependencies
+                            sh 'npm install'
+
+                            // Run SonarScanner for JavaScript/TypeScript
+                            def sonarScannerCmd = 'sonar-scanner'
+                            withCredentials([string(credentialsId: 'sqp_48de73f589a5a77fb61623d9adf0a473000dce2d', variable: 'SONAR_TOKEN')]) {
+                                // Set up the SonarQube analysis command with required parameters
+                                sonarScannerCmd += " -Dsonar.projectKey=test-sonar"
+                                sonarScannerCmd += " -Dsonar.sources=src"
+                                sonarScannerCmd += " -Dsonar.host.url=http://localhost:9000"
+                                sonarScannerCmd += " -Dsonar.login=${SONAR_TOKEN}"
+                                sh "${sonarScannerCmd}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
+        
         stage('Build and Deploy') {
             steps {
                 script {
