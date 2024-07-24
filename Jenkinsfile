@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     withSonarQubeEnv('sonar') {
-                        dir('/var/lib/jenkins/workspace/Hello_test') {
+                        dir('/var/lib/jenkins/workspace/Hello_test/sel-test') {
                             // Install Node.js dependencies
                             sh 'npm install'
 
